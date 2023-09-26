@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+<section class="quote">
+    <h1>Hacer un presupuesto</h1>
+
+    <form class="step1">
+        <h5>Paso 1/3</h5>
+        <div class="step1__songs-qty">
+            <p>¿Con cuantas canciones está buscando trabajar?</p>
+                <label class="songs-qty__label" for="songs-qty">Number of songs:</label>
+                <select class="songs-qty__select" id="songs-qty" name="songs-n">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                </select><br> 
+        </div>
+        <!-- dependiendo del numero que elijan en .songs-qty__select se inyectan más o menos .step1__song-title -->
+        <div class="step1__song-title">
+        <label class="song-name__label" for="song-name">Nombre de la canción</label>
+        <input type="text" class="song-name__input" id="song-name" name="song-name" placeholder="Song">
+        <label class="artist-name__label" for="artist-name">Artist Name</label>
+        <input type="text" class="artist-name__input" id="artist-name" name="artist-name" placeholder="Artist"><br>
+        </div>
+
+        <button>Continue</button>
+
+    </form>
+
+    <form class="step2">
+        <h5>Paso 2/3</h5>
+        <!-- por cada cancion ingresada en el paso 1 se inyecta (uno atras de otro) el .step2 -->
+        <p class="step2__song-title">$song-number - $song-name - $artist-name</p>
+
+        <p>A Qué genero pertenece la canción original?</p>
+            <label class="song-genre__label" for="song-genre">Choose genre</label>
+            <select class="song-genre__select" id="song-genre" name="song-genre">
+                <option value="asc">Jazz/Bossa/NeoSoul (Extended harmony)</option>
+                <option value="asc">Academic/Classical/Romantic (Orchestral instruments)</option>
+                <option value="asc">Pop/R&B/Soul</option>
+                <option value="desc">Rock/HeavyMetal</option>
+                <option value="desc">Other</option>
+            </select><br><br>
+
+        <p>¿Cuánto tiempo dura la canción?
+                <input type="number" id="min" min="0" max="59" step="1" placeholder="mm" name="min" required>
+                <input type="number" id="sec" min="0" max="59" step="1" placeholder="ss" name="sec" required> 
+            </p><br>
+
+        <div>¿Qué instrumentos de la canción necesitas transcribir?<br>
+                <div class="step2__instruments-list">
+                    <label class="instrument-item" for="voice">Voice:</label>
+                    <label class="instrument-item" for="guitar">Guitar:</label>
+                    <label class="instrument-item" for="bass">Bass:</label>
+                    <label class="instrument-item" for="piano">Piano:</label>
+                    <label class="instrument-item" for="ukulele">Ukulele:</label>
+                    <label class="instrument-item" for="drums">Drums:</label>
+                    <label class="instrument-item" for="drums">Other (Monophonic):</label>
+                </div>
+                <div class="step2__instruments-input">
+                    <input type="number" class="instrument-input" id="voice"  value="0" name="voice" min="0" max="99" step="1" placeholder="num.">   
+                    <input type="number" class="instrument-input" id="guitar"  value="0" name="guitar" min="0" max="99" step="1" placeholder="num.">
+                    <input type="number" class="instrument-input" id="bass"  value="0" name="bass" min="0" max="99" step="1" placeholder="num.">
+                    <input type="number" class="instrument-input" id="piano"  value="0" name="piano" min="0" max="99" step="1" placeholder="num.">
+                    <input type="number" class="instrument-input" id="ukulele"  value="0" name="ukulele" min="0" max="99" step="1" placeholder="num.">
+                    <input type="number" class="instrument-input" id="drums"  value="0" name="drums" min="0" max="99" step="1" placeholder="num.">
+                    <input type="number" class="instrument-input" id="other-m"  value="0" name="other-m" min="1" max="99" step="1" placeholder="num.">
+                </div> 
+        </div>
+        <br>
+        <br><button>Continue</button>
+    </form>                
+
+    <form class="step3">
+        <h5>Paso 3/3</h5>
+        <p>All these questions are optional. If you don't answer them, the price will be rounded up automatically. If you answer them, the price can be rounded down for more than 80%</p>
+    </form>
+</section>
+</body>
+</html>
